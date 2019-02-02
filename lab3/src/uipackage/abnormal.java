@@ -25,6 +25,7 @@ public class abnormal extends javax.swing.JPanel {
     private double minbpglbl,maxbpglbl;
     private HashMap<Integer,Integer> mapping=new HashMap<>();
     vitalsignhistory historyglbl=new vitalsignhistory();
+    
     public abnormal(vitalsignhistory history,double minbp,double maxbp) {
         minbpglbl=minbp;
         maxbpglbl=maxbp;
@@ -61,11 +62,11 @@ public class abnormal extends javax.swing.JPanel {
                     rowdata[1] = tempo.get(i).getBloodPressure();
                     mapping.put(j,i);
                     j++;
-                            
+                    model.addRow(rowdata);   
                     }
         
         
-        model.addRow(rowdata);
+        
         }
         model.setColumnCount(2);
         model.setRowCount(tempo.size());
@@ -243,6 +244,7 @@ public class abnormal extends javax.swing.JPanel {
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
         int i = historyTbl.getSelectedRow();
+        ((DefaultTableModel)historyTbl.getModel()).removeRow(i);
         int key=mapping.get(i);
         historyglbl.deletevitalsign(key);
 
@@ -274,6 +276,7 @@ public class abnormal extends javax.swing.JPanel {
 
     private void detailsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsBTNActionPerformed
         int i = historyTbl.getSelectedRow();
+        i=mapping.get(i);
         vitalsign dataobj = historyglbl.getVitalSignHistory().get(i);
         temperatureTB.setText(String.valueOf(dataobj.getTemperature()));
         bpTB.setText(String.valueOf(dataobj.getTemperature()));
