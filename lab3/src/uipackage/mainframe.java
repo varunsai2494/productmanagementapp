@@ -50,11 +50,11 @@ public class mainframe extends javax.swing.JFrame {
         leftpanel = new javax.swing.JPanel();
         viewbutton = new javax.swing.JButton();
         createBTN = new javax.swing.JButton();
+        abnormalBTN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        abnormalBTN = new javax.swing.JButton();
-        maxBP = new javax.swing.JTextField();
         minBP = new javax.swing.JTextField();
+        maxBP = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,14 +85,20 @@ public class mainframe extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("MAXBP");
-
-        jLabel2.setText("MINBP");
-
         abnormalBTN.setText("Abnormal");
         abnormalBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abnormalBTNActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("MAXBP");
+
+        jLabel2.setText("MINBP");
+
+        minBP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minBPActionPerformed(evt);
             }
         });
 
@@ -102,58 +108,50 @@ public class mainframe extends javax.swing.JFrame {
             }
         });
 
-        minBP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minBPActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout leftpanelLayout = new javax.swing.GroupLayout(leftpanel);
         leftpanel.setLayout(leftpanelLayout);
         leftpanelLayout.setHorizontalGroup(
             leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftpanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(createBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 17, Short.MAX_VALUE))
+            .addGroup(leftpanelLayout.createSequentialGroup()
                 .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(leftpanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(createBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewbutton, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(12, 12, 12)
+                        .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(minBP, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                            .addComponent(maxBP)))
                     .addGroup(leftpanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(leftpanelLayout.createSequentialGroup()
-                                .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(maxBP)
-                                    .addComponent(minBP, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)))
-                            .addGroup(leftpanelLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(abnormalBTN)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                        .addGap(15, 15, 15)
+                        .addComponent(abnormalBTN)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         leftpanelLayout.setVerticalGroup(
             leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftpanelLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(createBTN)
+                .addGap(47, 47, 47)
+                .addComponent(createBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(viewbutton)
-                .addGap(18, 18, 18)
+                .addComponent(viewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(maxBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(minBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(16, 16, 16)
                 .addComponent(abnormalBTN)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         splitpane.setLeftComponent(leftpanel);
@@ -183,7 +181,7 @@ public class mainframe extends javax.swing.JFrame {
 
     private void viewbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbuttonActionPerformed
         // TODO add your handling code here:
-        viewpanel viewpanel=new viewpanel(vitalsign,history);
+        viewpanel viewpanel=new viewpanel(rightpanel,vitalsign,history);
         rightpanel.add("viewpanel",viewpanel);
         CardLayout layout=(CardLayout)rightpanel.getLayout();
         layout.next(rightpanel);
@@ -202,7 +200,7 @@ public class mainframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         double minbp=Double.parseDouble(minBP.getText());
         double maxbp=Double.parseDouble(maxBP.getText());
-        abnormal abnormalpanel=new abnormal(history,minbp,maxbp);
+        abnormal abnormalpanel=new abnormal(rightpanel,history,minbp,maxbp);
         rightpanel.add("abnormalpanel",abnormalpanel);
         CardLayout layout=(CardLayout)rightpanel.getLayout();
         layout.next(rightpanel);
