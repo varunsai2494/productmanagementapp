@@ -56,11 +56,11 @@ public class mainframe extends javax.swing.JFrame {
         rightpanel.setLayout(rightpanelLayout);
         rightpanelLayout.setHorizontalGroup(
             rightpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 287, Short.MAX_VALUE)
+            .addGap(0, 844, Short.MAX_VALUE)
         );
         rightpanelLayout.setVerticalGroup(
             rightpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
+            .addGap(0, 561, Short.MAX_VALUE)
         );
 
         splitpane.setRightComponent(rightpanel);
@@ -86,18 +86,18 @@ public class mainframe extends javax.swing.JFrame {
             .addGroup(leftpanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
         leftpanelLayout.setVerticalGroup(
             leftpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftpanelLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(173, 173, 173)
                 .addComponent(createBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(44, 44, 44)
                 .addComponent(viewbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
 
         splitpane.setLeftComponent(leftpanel);

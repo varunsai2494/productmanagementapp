@@ -5,6 +5,8 @@
  */
 package business_package;
 
+import java.util.HashMap;
+
 /**
  *
  * @author imperio2494
@@ -65,8 +67,23 @@ public class vitalsign {
         this.timestamp = timestamp;
     }
     
-    public boolean isNormal(double low,double high){
-     return (this.heartRate>=low && this.heartRate<=high);
+    public boolean isNormal(double low,double high,int filterType){
+        double temp;
+        if (filterType==1)
+            temp=this.bp;
+        else if (filterType==2)
+            temp=this.respiratoryRate;
+        else if (filterType==3)
+            temp=this.heartRate;
+        else if (filterType==4)
+            temp=this.weightinkg;
+        else if (filterType==5)
+            temp=this.weightinlbs;
+        else
+            temp=0;
+                  
+                
+     return (temp>=low && temp<=high);
     }
     
     @Override

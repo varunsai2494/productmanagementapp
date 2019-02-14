@@ -34,7 +34,7 @@ public class Myrenderer extends DefaultTableCellRenderer {
             Component comp = super.getTableCellRendererComponent(table,  value, isSelected, hasFocus, row, col);
 
             if (cellXY.contains(new Pair<Integer,Integer>(row,col))){
-                  comp.setForeground(Color.WHITE);}
+                  comp.setForeground(Color.RED);}
             else{
                 comp.setForeground(Color.BLACK);}
             return( comp );

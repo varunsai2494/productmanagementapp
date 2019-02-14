@@ -9,6 +9,7 @@ import business_package.patient;
 import javax.swing.JPanel;
 import business_package.vitalsignhistory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 /**
  *
  * @author imperio2494
@@ -28,7 +29,16 @@ public class viewPatient extends javax.swing.JPanel {
     }
     
     private void populatePatientDetails(){
-        
+    updatepatientbtn.setEnabled(true);
+    savepatientbtn.setEnabled(false);
+    idtb.setEditable(false);
+    nametb.setEditable(false);
+    dobtb.setEditable(false);
+    contacttb.setEditable(false);
+    pharmatb.setEditable(false);
+    docfnametb.setEditable(false);
+    doclnametb.setEditable(false);
+    
     idtb.setText(Integer.toString(Patient.getPatId()));
     nametb.setText(Patient.getPatName());
     dobtb.setText(Patient.getDob());
@@ -36,7 +46,7 @@ public class viewPatient extends javax.swing.JPanel {
     pharmatb.setText(Patient.getPharmacyName());
     docfnametb.setText(Patient.getDocFirstName());
     doclnametb.setText(Patient.getDocLastName());
-            
+          
     
     }
     /**
@@ -131,87 +141,90 @@ public class viewPatient extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(136, 136, 136)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(260, 260, 260))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(updatepatientbtn))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(savepatientbtn)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(idtb)
-                                    .addComponent(nametb)
-                                    .addComponent(dobtb)
-                                    .addComponent(contacttb)
-                                    .addComponent(pharmatb)
-                                    .addComponent(docfnametb)
-                                    .addComponent(doclnametb, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addvitalsignbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(viewvitalsign, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(backbtn, javax.swing.GroupLayout.Alignment.TRAILING))))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6))
+                                .addGap(36, 36, 36))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(updatepatientbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(idtb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nametb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dobtb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(contacttb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pharmatb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(docfnametb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(doclnametb)
+                            .addComponent(savepatientbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(112, 112, 112)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewvitalsign, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addvitalsignbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(idtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(nametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(dobtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(contacttb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(pharmatb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(docfnametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(backbtn)
-                        .addGap(155, 155, 155)
-                        .addComponent(addvitalsignbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(viewvitalsign)))
+                        .addGap(14, 14, 14)
+                        .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(doclnametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(savepatientbtn)
-                    .addComponent(updatepatientbtn))
-                .addContainerGap(113, Short.MAX_VALUE))
+                    .addComponent(nametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dobtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(contacttb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pharmatb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(docfnametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(addvitalsignbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(viewvitalsign, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(doclnametb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updatepatientbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(savepatientbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -221,17 +234,68 @@ public class viewPatient extends javax.swing.JPanel {
 
     private void updatepatientbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatepatientbtnActionPerformed
         // TODO add your handling code here:
+        updatepatientbtn.setEnabled(false);
+        savepatientbtn.setEnabled(true);
+        
+    nametb.setEditable(true);
+    dobtb.setEditable(true);
+    contacttb.setEditable(true);
+    pharmatb.setEditable(true);
+    docfnametb.setEditable(true);
+    doclnametb.setEditable(true);
+        
     }//GEN-LAST:event_updatepatientbtnActionPerformed
 
     private void savepatientbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savepatientbtnActionPerformed
         // TODO add your handling code here:
-        Patient.setPatName(nametb.getText());
-        Patient.setDob(dobtb.getText());
-        Patient.setContact(contacttb.getText());
-        Patient.setPharmacyName(pharmatb.getText());
-        Patient.setDocFirstName(docfnametb.getText());
-        Patient.setDocLastName(doclnametb.getText());
+        
+        String errorString="";
+        
+        String name=nametb.getText().trim();
+        if (name.length()<=0)
+            errorString=errorString+" name ,";
+        String dob=dobtb.getText();
+        if (dob.length()<=0)
+            errorString=errorString+" Date of Birth ,";
+        
+        
+         String    contact=contacttb.getText().trim();
+       
+            
+        String pharma=pharmatb.getText().trim();
+        String docfname=docfnametb.getText().trim();
+        if (docfname.length()<=0)
+            errorString=errorString+" doctor's first name ,";
+        String doclname=doclnametb.getText();
+        if (doclname.length()<=0)
+            errorString=errorString+" doctor's last name ";
+        
+        if(errorString.trim().length()>1)
+            JOptionPane.showMessageDialog(null,"Please check the fields properly:\n"+errorString);
+        else{
+            
+            Patient.setPatName(name);
+        Patient.setDob(dob);
+        Patient.setContact(contact);
+        Patient.setDocFirstName(docfname);
+        Patient.setDocLastName(doclname);
+        
+        Patient.setPharmacyName(pharma);
+        
+        JOptionPane.showMessageDialog(null," patient updated successfully");
+        }
         populatePatientDetails();
+        
+        
+        
+        
+//        Patient.setPatName(nametb.getText());
+//        Patient.setDob(dobtb.getText());
+//        Patient.setContact(contacttb.getText());
+//        Patient.setPharmacyName(pharmatb.getText());
+//        Patient.setDocFirstName(docfnametb.getText());
+//        Patient.setDocLastName(doclnametb.getText());
+        
     }//GEN-LAST:event_savepatientbtnActionPerformed
 
     private void addvitalsignbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addvitalsignbtnActionPerformed
